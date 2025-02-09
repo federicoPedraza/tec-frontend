@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// TODO: Revisar el uso de "any" en el código
 "use client";
 
 import { useState, useRef } from "react";
