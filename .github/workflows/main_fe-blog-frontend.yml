@@ -17,22 +17,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
 
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
           node-version: '22.x'
 
-      - name: Run build
+      - name: npm install, build, and test
         run: |
-          bun install
-          bun run build --if-present
-
-      - name: Copy static files
-        run: |
-          cp -R ./public ./.next/standalone/public
-          cp -R ./.next/static ./.next/standalone/.next/static
+          npm install
+          npm run build --if-present
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
