@@ -1,11 +1,7 @@
-// src/app/layout.tsx (o RootLayout.tsx)
-
 import type { Metadata } from "next";
 import "./globals.css";
-// Importamos nuestras fuentes definidas en constants/fonts:
 import { bryndan,geist, doublebass } from "@/constants/fonts";
 import { Providers } from "@/components/providers";
-import { ScrollContainer } from "react-nice-scroll";
 
 export const metadata: Metadata = {
   title: "The English Crab",
@@ -20,13 +16,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geist.variable}  ${doublebass.variable} ${bryndan.variable}  font-geist`}>
-        <Providers>
-          
-    <ScrollContainer>
-      
-          {children}
-          
-    </ScrollContainer>
+          <Providers>
+            {children}
           </Providers>
       </body>
     </html>
