@@ -17,15 +17,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
 
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
           node-version: '22.x'
-
-      - name: Install bun
-        run: |
-          npm install -g bun
 
       - name: Run build
         run: |
